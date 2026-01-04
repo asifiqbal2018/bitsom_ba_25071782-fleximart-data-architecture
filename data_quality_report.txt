@@ -1,0 +1,20 @@
+Flexi Mart - Data Quality Report
+========================================
+
+File: customers_raw.csv
+  Number of records processed:      26
+  Number of duplicates removed:     1
+  Number of missing values handled: 5
+  Number loaded successfully:       20
+
+File: products_raw.csv
+  Number of records processed:      20
+  Number of duplicates removed:     0
+  Number of missing values handled: 0
+  Number loaded successfully:       20
+
+File: sales_raw.csv
+  Number of records processed:      41
+  Number of duplicates removed:     1
+  Number of missing values handled: 13
+  Number loaded successfully:       54

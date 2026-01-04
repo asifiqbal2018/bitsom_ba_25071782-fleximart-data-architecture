@@ -1,0 +1,674 @@
+2026-01-03 22:54:13,037 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-03 22:54:13,046 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-03 22:54:13,049 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-03 22:54:13,062 | INFO | Customers: dropped 5 rows due to missing email.
+2026-01-03 22:54:13,065 | INFO | Customers: standardized phone formats.
+2026-01-03 22:54:13,078 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-03 22:54:13,083 | INFO | Products: standardized category names.
+2026-01-03 22:54:13,094 | INFO | Products: removed 5 duplicate rows by (product_name, category).
+2026-01-03 22:54:13,409 | INFO | Loaded 20 rows into customers.
+2026-01-03 22:54:13,423 | ERROR | Failed inserting into products: (psycopg2.errors.NotNullViolation) null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+[SQL: INSERT INTO products (product_name, category, price, stock_quantity) VALUES (%(product_name_m0)s, %(category_m0)s, %(price_m0)s, %(stock_quantity_m0)s), (%(product_name_m1)s, %(category_m1)s, %(price_m1)s, %(stock_quantity_m1)s), (%(product_name_m2)s, %(category_m2)s, %(price_m2)s, %(stock_quantity_m2)s), (%(product_name_m3)s, %(category_m3)s, %(price_m3)s, %(stock_quantity_m3)s), (%(product_name_m4)s, %(category_m4)s, %(price_m4)s, %(stock_quantity_m4)s), (%(product_name_m5)s, %(category_m5)s, %(price_m5)s, %(stock_quantity_m5)s), (%(product_name_m6)s, %(category_m6)s, %(price_m6)s, %(stock_quantity_m6)s), (%(product_name_m7)s, %(category_m7)s, %(price_m7)s, %(stock_quantity_m7)s), (%(product_name_m8)s, %(category_m8)s, %(price_m8)s, %(stock_quantity_m8)s), (%(product_name_m9)s, %(category_m9)s, %(price_m9)s, %(stock_quantity_m9)s), (%(product_name_m10)s, %(category_m10)s, %(price_m10)s, %(stock_quantity_m10)s), (%(product_name_m11)s, %(category_m11)s, %(price_m11)s, %(stock_quantity_m11)s), (%(product_name_m12)s, %(category_m12)s, %(price_m12)s, %(stock_quantity_m12)s), (%(product_name_m13)s, %(category_m13)s, %(price_m13)s, %(stock_quantity_m13)s), (%(product_name_m14)s, %(category_m14)s, %(price_m14)s, %(stock_quantity_m14)s), (%(product_name_m15)s, %(category_m15)s, %(price_m15)s, %(stock_quantity_m15)s), (%(product_name_m16)s, %(category_m16)s, %(price_m16)s, %(stock_quantity_m16)s), (%(product_name_m17)s, %(category_m17)s, %(price_m17)s, %(stock_quantity_m17)s), (%(product_name_m18)s, %(category_m18)s, %(price_m18)s, %(stock_quantity_m18)s), (%(product_name_m19)s, %(category_m19)s, %(price_m19)s, %(stock_quantity_m19)s), (%(product_name_m20)s, %(category_m20)s, %(price_m20)s, %(stock_quantity_m20)s)]
+[parameters: {'product_name_m0': 'Samsung Galaxy S21', 'category_m0': 'Electronics', 'price_m0': 45999.0, 'stock_quantity_m0': 150, 'product_name_m1': 'Nike Running Shoes', 'category_m1': 'Fashion', 'price_m1': 3499.0, 'stock_quantity_m1': 80, 'product_name_m2': 'Apple MacBook Pro', 'category_m2': 'Electronics', 'price_m2': 32999.0, 'stock_quantity_m2': 45, 'product_name_m3': "Levi's Jeans", 'category_m3': 'Fashion', 'price_m3': 2999.0, 'stock_quantity_m3': 120, 'product_name_m4': 'Sony Headphones', 'category_m4': 'Electronics', 'price_m4': 1999.0, 'stock_quantity_m4': 200, 'product_name_m5': 'Organic Almonds', 'category_m5': 'Groceries', 'price_m5': 899.0, 'stock_quantity_m5': 0, 'product_name_m6': 'HP Laptop', 'category_m6': 'Electronics', 'price_m6': 52999.0, 'stock_quantity_m6': 60, 'product_name_m7': 'Adidas T-Shirt', 'category_m7': 'Fashion', 'price_m7': 1299.0, 'stock_quantity_m7': 150, 'product_name_m8': 'Basmati Rice 5kg', 'category_m8': 'Groceries', 'price_m8': 650.0, 'stock_quantity_m8': 300, 'product_name_m9': 'OnePlus Nord', 'category_m9': 'Electronics', 'price_m9': 32999.0, 'stock_quantity_m9': 95, 'product_name_m10': 'Puma Sneakers', 'category_m10': 'Fashion', 'price_m10': 4599.0, 'stock_quantity_m10': 70, 'product_name_m11': 'Dell Monitor 24inch', 'category_m11': 'Electronics', 'price_m11': 12999.0, 'stock_quantity_m11': 40, 'product_name_m12': 'Woodland Shoes', 'category_m12': 'Fashion', 'price_m12': 5499.0, 'stock_quantity_m12': 55, 'product_name_m13': 'iPhone 13', 'category_m13': 'Electronics', 'price_m13': 69999.0, 'stock_quantity_m13': 80, 'product_name_m14': 'Organic Honey 500g', 'category_m14': 'Groceries', 'price_m14': 450.0, 'stock_quantity_m14': 200, 'product_name_m15': 'Samsung TV 43inch', 'category_m15': 'Electronics', 'price_m15': 32999.0, 'stock_quantity_m15': 35, 'product_name_m16': 'H&M Shirt', 'category_m16': 'Fashion', 'price_m16': 3249.0, 'stock_quantity_m16': 90, 'product_name_m17': 'Masoor Dal 1kg', 'category_m17': 'Groceries', 'price_m17': 120.0, 'stock_quantity_m17': 500, 'product_name_m18': 'Boat Earbuds', 'category_m18': 'Electronics', 'price_m18': 1499.0, 'stock_quantity_m18': 250, 'product_name_m19': 'Reebok Trackpants', 'category_m19': 'Fashion', 'price_m19': 1899.0, 'stock_quantity_m19': 110, 'product_name_m20': None, 'category_m20': 'Unknown', 'price_m20': 2999.0, 'stock_quantity_m20': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 448, in insert_dataframe
+    df.to_sql(table, conn, if_exists="append", index=False, method="multi")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 2030, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1579, in insert_records
+    raise err
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1570, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1029, in _execute_insert_multi
+    result = conn.execute(stmt)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+[SQL: INSERT INTO products (product_name, category, price, stock_quantity) VALUES (%(product_name_m0)s, %(category_m0)s, %(price_m0)s, %(stock_quantity_m0)s), (%(product_name_m1)s, %(category_m1)s, %(price_m1)s, %(stock_quantity_m1)s), (%(product_name_m2)s, %(category_m2)s, %(price_m2)s, %(stock_quantity_m2)s), (%(product_name_m3)s, %(category_m3)s, %(price_m3)s, %(stock_quantity_m3)s), (%(product_name_m4)s, %(category_m4)s, %(price_m4)s, %(stock_quantity_m4)s), (%(product_name_m5)s, %(category_m5)s, %(price_m5)s, %(stock_quantity_m5)s), (%(product_name_m6)s, %(category_m6)s, %(price_m6)s, %(stock_quantity_m6)s), (%(product_name_m7)s, %(category_m7)s, %(price_m7)s, %(stock_quantity_m7)s), (%(product_name_m8)s, %(category_m8)s, %(price_m8)s, %(stock_quantity_m8)s), (%(product_name_m9)s, %(category_m9)s, %(price_m9)s, %(stock_quantity_m9)s), (%(product_name_m10)s, %(category_m10)s, %(price_m10)s, %(stock_quantity_m10)s), (%(product_name_m11)s, %(category_m11)s, %(price_m11)s, %(stock_quantity_m11)s), (%(product_name_m12)s, %(category_m12)s, %(price_m12)s, %(stock_quantity_m12)s), (%(product_name_m13)s, %(category_m13)s, %(price_m13)s, %(stock_quantity_m13)s), (%(product_name_m14)s, %(category_m14)s, %(price_m14)s, %(stock_quantity_m14)s), (%(product_name_m15)s, %(category_m15)s, %(price_m15)s, %(stock_quantity_m15)s), (%(product_name_m16)s, %(category_m16)s, %(price_m16)s, %(stock_quantity_m16)s), (%(product_name_m17)s, %(category_m17)s, %(price_m17)s, %(stock_quantity_m17)s), (%(product_name_m18)s, %(category_m18)s, %(price_m18)s, %(stock_quantity_m18)s), (%(product_name_m19)s, %(category_m19)s, %(price_m19)s, %(stock_quantity_m19)s), (%(product_name_m20)s, %(category_m20)s, %(price_m20)s, %(stock_quantity_m20)s)]
+[parameters: {'product_name_m0': 'Samsung Galaxy S21', 'category_m0': 'Electronics', 'price_m0': 45999.0, 'stock_quantity_m0': 150, 'product_name_m1': 'Nike Running Shoes', 'category_m1': 'Fashion', 'price_m1': 3499.0, 'stock_quantity_m1': 80, 'product_name_m2': 'Apple MacBook Pro', 'category_m2': 'Electronics', 'price_m2': 32999.0, 'stock_quantity_m2': 45, 'product_name_m3': "Levi's Jeans", 'category_m3': 'Fashion', 'price_m3': 2999.0, 'stock_quantity_m3': 120, 'product_name_m4': 'Sony Headphones', 'category_m4': 'Electronics', 'price_m4': 1999.0, 'stock_quantity_m4': 200, 'product_name_m5': 'Organic Almonds', 'category_m5': 'Groceries', 'price_m5': 899.0, 'stock_quantity_m5': 0, 'product_name_m6': 'HP Laptop', 'category_m6': 'Electronics', 'price_m6': 52999.0, 'stock_quantity_m6': 60, 'product_name_m7': 'Adidas T-Shirt', 'category_m7': 'Fashion', 'price_m7': 1299.0, 'stock_quantity_m7': 150, 'product_name_m8': 'Basmati Rice 5kg', 'category_m8': 'Groceries', 'price_m8': 650.0, 'stock_quantity_m8': 300, 'product_name_m9': 'OnePlus Nord', 'category_m9': 'Electronics', 'price_m9': 32999.0, 'stock_quantity_m9': 95, 'product_name_m10': 'Puma Sneakers', 'category_m10': 'Fashion', 'price_m10': 4599.0, 'stock_quantity_m10': 70, 'product_name_m11': 'Dell Monitor 24inch', 'category_m11': 'Electronics', 'price_m11': 12999.0, 'stock_quantity_m11': 40, 'product_name_m12': 'Woodland Shoes', 'category_m12': 'Fashion', 'price_m12': 5499.0, 'stock_quantity_m12': 55, 'product_name_m13': 'iPhone 13', 'category_m13': 'Electronics', 'price_m13': 69999.0, 'stock_quantity_m13': 80, 'product_name_m14': 'Organic Honey 500g', 'category_m14': 'Groceries', 'price_m14': 450.0, 'stock_quantity_m14': 200, 'product_name_m15': 'Samsung TV 43inch', 'category_m15': 'Electronics', 'price_m15': 32999.0, 'stock_quantity_m15': 35, 'product_name_m16': 'H&M Shirt', 'category_m16': 'Fashion', 'price_m16': 3249.0, 'stock_quantity_m16': 90, 'product_name_m17': 'Masoor Dal 1kg', 'category_m17': 'Groceries', 'price_m17': 120.0, 'stock_quantity_m17': 500, 'product_name_m18': 'Boat Earbuds', 'category_m18': 'Electronics', 'price_m18': 1499.0, 'stock_quantity_m18': 250, 'product_name_m19': 'Reebok Trackpants', 'category_m19': 'Fashion', 'price_m19': 1899.0, 'stock_quantity_m19': 110, 'product_name_m20': None, 'category_m20': 'Unknown', 'price_m20': 2999.0, 'stock_quantity_m20': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-01-03 22:54:13,445 | ERROR | ❌ ETL Failed: (psycopg2.errors.NotNullViolation) null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+[SQL: INSERT INTO products (product_name, category, price, stock_quantity) VALUES (%(product_name_m0)s, %(category_m0)s, %(price_m0)s, %(stock_quantity_m0)s), (%(product_name_m1)s, %(category_m1)s, %(price_m1)s, %(stock_quantity_m1)s), (%(product_name_m2)s, %(category_m2)s, %(price_m2)s, %(stock_quantity_m2)s), (%(product_name_m3)s, %(category_m3)s, %(price_m3)s, %(stock_quantity_m3)s), (%(product_name_m4)s, %(category_m4)s, %(price_m4)s, %(stock_quantity_m4)s), (%(product_name_m5)s, %(category_m5)s, %(price_m5)s, %(stock_quantity_m5)s), (%(product_name_m6)s, %(category_m6)s, %(price_m6)s, %(stock_quantity_m6)s), (%(product_name_m7)s, %(category_m7)s, %(price_m7)s, %(stock_quantity_m7)s), (%(product_name_m8)s, %(category_m8)s, %(price_m8)s, %(stock_quantity_m8)s), (%(product_name_m9)s, %(category_m9)s, %(price_m9)s, %(stock_quantity_m9)s), (%(product_name_m10)s, %(category_m10)s, %(price_m10)s, %(stock_quantity_m10)s), (%(product_name_m11)s, %(category_m11)s, %(price_m11)s, %(stock_quantity_m11)s), (%(product_name_m12)s, %(category_m12)s, %(price_m12)s, %(stock_quantity_m12)s), (%(product_name_m13)s, %(category_m13)s, %(price_m13)s, %(stock_quantity_m13)s), (%(product_name_m14)s, %(category_m14)s, %(price_m14)s, %(stock_quantity_m14)s), (%(product_name_m15)s, %(category_m15)s, %(price_m15)s, %(stock_quantity_m15)s), (%(product_name_m16)s, %(category_m16)s, %(price_m16)s, %(stock_quantity_m16)s), (%(product_name_m17)s, %(category_m17)s, %(price_m17)s, %(stock_quantity_m17)s), (%(product_name_m18)s, %(category_m18)s, %(price_m18)s, %(stock_quantity_m18)s), (%(product_name_m19)s, %(category_m19)s, %(price_m19)s, %(stock_quantity_m19)s), (%(product_name_m20)s, %(category_m20)s, %(price_m20)s, %(stock_quantity_m20)s)]
+[parameters: {'product_name_m0': 'Samsung Galaxy S21', 'category_m0': 'Electronics', 'price_m0': 45999.0, 'stock_quantity_m0': 150, 'product_name_m1': 'Nike Running Shoes', 'category_m1': 'Fashion', 'price_m1': 3499.0, 'stock_quantity_m1': 80, 'product_name_m2': 'Apple MacBook Pro', 'category_m2': 'Electronics', 'price_m2': 32999.0, 'stock_quantity_m2': 45, 'product_name_m3': "Levi's Jeans", 'category_m3': 'Fashion', 'price_m3': 2999.0, 'stock_quantity_m3': 120, 'product_name_m4': 'Sony Headphones', 'category_m4': 'Electronics', 'price_m4': 1999.0, 'stock_quantity_m4': 200, 'product_name_m5': 'Organic Almonds', 'category_m5': 'Groceries', 'price_m5': 899.0, 'stock_quantity_m5': 0, 'product_name_m6': 'HP Laptop', 'category_m6': 'Electronics', 'price_m6': 52999.0, 'stock_quantity_m6': 60, 'product_name_m7': 'Adidas T-Shirt', 'category_m7': 'Fashion', 'price_m7': 1299.0, 'stock_quantity_m7': 150, 'product_name_m8': 'Basmati Rice 5kg', 'category_m8': 'Groceries', 'price_m8': 650.0, 'stock_quantity_m8': 300, 'product_name_m9': 'OnePlus Nord', 'category_m9': 'Electronics', 'price_m9': 32999.0, 'stock_quantity_m9': 95, 'product_name_m10': 'Puma Sneakers', 'category_m10': 'Fashion', 'price_m10': 4599.0, 'stock_quantity_m10': 70, 'product_name_m11': 'Dell Monitor 24inch', 'category_m11': 'Electronics', 'price_m11': 12999.0, 'stock_quantity_m11': 40, 'product_name_m12': 'Woodland Shoes', 'category_m12': 'Fashion', 'price_m12': 5499.0, 'stock_quantity_m12': 55, 'product_name_m13': 'iPhone 13', 'category_m13': 'Electronics', 'price_m13': 69999.0, 'stock_quantity_m13': 80, 'product_name_m14': 'Organic Honey 500g', 'category_m14': 'Groceries', 'price_m14': 450.0, 'stock_quantity_m14': 200, 'product_name_m15': 'Samsung TV 43inch', 'category_m15': 'Electronics', 'price_m15': 32999.0, 'stock_quantity_m15': 35, 'product_name_m16': 'H&M Shirt', 'category_m16': 'Fashion', 'price_m16': 3249.0, 'stock_quantity_m16': 90, 'product_name_m17': 'Masoor Dal 1kg', 'category_m17': 'Groceries', 'price_m17': 120.0, 'stock_quantity_m17': 500, 'product_name_m18': 'Boat Earbuds', 'category_m18': 'Electronics', 'price_m18': 1499.0, 'stock_quantity_m18': 250, 'product_name_m19': 'Reebok Trackpants', 'category_m19': 'Fashion', 'price_m19': 1899.0, 'stock_quantity_m19': 110, 'product_name_m20': None, 'category_m20': 'Unknown', 'price_m20': 2999.0, 'stock_quantity_m20': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 644, in main
+    metrics[1].records_loaded = insert_dataframe(engine, "products", products_clean, logger)
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 448, in insert_dataframe
+    df.to_sql(table, conn, if_exists="append", index=False, method="multi")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 2030, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1579, in insert_records
+    raise err
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1570, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1029, in _execute_insert_multi
+    result = conn.execute(stmt)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "product_name" of relation "products" violates not-null constraint
+DETAIL:  Failing row contains (21, null, Unknown, 2999.00, 0).
+
+[SQL: INSERT INTO products (product_name, category, price, stock_quantity) VALUES (%(product_name_m0)s, %(category_m0)s, %(price_m0)s, %(stock_quantity_m0)s), (%(product_name_m1)s, %(category_m1)s, %(price_m1)s, %(stock_quantity_m1)s), (%(product_name_m2)s, %(category_m2)s, %(price_m2)s, %(stock_quantity_m2)s), (%(product_name_m3)s, %(category_m3)s, %(price_m3)s, %(stock_quantity_m3)s), (%(product_name_m4)s, %(category_m4)s, %(price_m4)s, %(stock_quantity_m4)s), (%(product_name_m5)s, %(category_m5)s, %(price_m5)s, %(stock_quantity_m5)s), (%(product_name_m6)s, %(category_m6)s, %(price_m6)s, %(stock_quantity_m6)s), (%(product_name_m7)s, %(category_m7)s, %(price_m7)s, %(stock_quantity_m7)s), (%(product_name_m8)s, %(category_m8)s, %(price_m8)s, %(stock_quantity_m8)s), (%(product_name_m9)s, %(category_m9)s, %(price_m9)s, %(stock_quantity_m9)s), (%(product_name_m10)s, %(category_m10)s, %(price_m10)s, %(stock_quantity_m10)s), (%(product_name_m11)s, %(category_m11)s, %(price_m11)s, %(stock_quantity_m11)s), (%(product_name_m12)s, %(category_m12)s, %(price_m12)s, %(stock_quantity_m12)s), (%(product_name_m13)s, %(category_m13)s, %(price_m13)s, %(stock_quantity_m13)s), (%(product_name_m14)s, %(category_m14)s, %(price_m14)s, %(stock_quantity_m14)s), (%(product_name_m15)s, %(category_m15)s, %(price_m15)s, %(stock_quantity_m15)s), (%(product_name_m16)s, %(category_m16)s, %(price_m16)s, %(stock_quantity_m16)s), (%(product_name_m17)s, %(category_m17)s, %(price_m17)s, %(stock_quantity_m17)s), (%(product_name_m18)s, %(category_m18)s, %(price_m18)s, %(stock_quantity_m18)s), (%(product_name_m19)s, %(category_m19)s, %(price_m19)s, %(stock_quantity_m19)s), (%(product_name_m20)s, %(category_m20)s, %(price_m20)s, %(stock_quantity_m20)s)]
+[parameters: {'product_name_m0': 'Samsung Galaxy S21', 'category_m0': 'Electronics', 'price_m0': 45999.0, 'stock_quantity_m0': 150, 'product_name_m1': 'Nike Running Shoes', 'category_m1': 'Fashion', 'price_m1': 3499.0, 'stock_quantity_m1': 80, 'product_name_m2': 'Apple MacBook Pro', 'category_m2': 'Electronics', 'price_m2': 32999.0, 'stock_quantity_m2': 45, 'product_name_m3': "Levi's Jeans", 'category_m3': 'Fashion', 'price_m3': 2999.0, 'stock_quantity_m3': 120, 'product_name_m4': 'Sony Headphones', 'category_m4': 'Electronics', 'price_m4': 1999.0, 'stock_quantity_m4': 200, 'product_name_m5': 'Organic Almonds', 'category_m5': 'Groceries', 'price_m5': 899.0, 'stock_quantity_m5': 0, 'product_name_m6': 'HP Laptop', 'category_m6': 'Electronics', 'price_m6': 52999.0, 'stock_quantity_m6': 60, 'product_name_m7': 'Adidas T-Shirt', 'category_m7': 'Fashion', 'price_m7': 1299.0, 'stock_quantity_m7': 150, 'product_name_m8': 'Basmati Rice 5kg', 'category_m8': 'Groceries', 'price_m8': 650.0, 'stock_quantity_m8': 300, 'product_name_m9': 'OnePlus Nord', 'category_m9': 'Electronics', 'price_m9': 32999.0, 'stock_quantity_m9': 95, 'product_name_m10': 'Puma Sneakers', 'category_m10': 'Fashion', 'price_m10': 4599.0, 'stock_quantity_m10': 70, 'product_name_m11': 'Dell Monitor 24inch', 'category_m11': 'Electronics', 'price_m11': 12999.0, 'stock_quantity_m11': 40, 'product_name_m12': 'Woodland Shoes', 'category_m12': 'Fashion', 'price_m12': 5499.0, 'stock_quantity_m12': 55, 'product_name_m13': 'iPhone 13', 'category_m13': 'Electronics', 'price_m13': 69999.0, 'stock_quantity_m13': 80, 'product_name_m14': 'Organic Honey 500g', 'category_m14': 'Groceries', 'price_m14': 450.0, 'stock_quantity_m14': 200, 'product_name_m15': 'Samsung TV 43inch', 'category_m15': 'Electronics', 'price_m15': 32999.0, 'stock_quantity_m15': 35, 'product_name_m16': 'H&M Shirt', 'category_m16': 'Fashion', 'price_m16': 3249.0, 'stock_quantity_m16': 90, 'product_name_m17': 'Masoor Dal 1kg', 'category_m17': 'Groceries', 'price_m17': 120.0, 'stock_quantity_m17': 500, 'product_name_m18': 'Boat Earbuds', 'category_m18': 'Electronics', 'price_m18': 1499.0, 'stock_quantity_m18': 250, 'product_name_m19': 'Reebok Trackpants', 'category_m19': 'Fashion', 'price_m19': 1899.0, 'stock_quantity_m19': 110, 'product_name_m20': None, 'category_m20': 'Unknown', 'price_m20': 2999.0, 'stock_quantity_m20': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-01-03 22:54:13,452 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-03 23:30:48,779 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-03 23:30:48,785 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-03 23:30:48,787 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-03 23:30:48,796 | INFO | Customers: dropped 5 rows due to missing email.
+2026-01-03 23:30:48,798 | INFO | Customers: standardized phone formats.
+2026-01-03 23:30:48,817 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-03 23:30:48,824 | INFO | Products: standardized category names.
+2026-01-03 23:30:48,938 | ERROR | Failed inserting into customers: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+[SQL: INSERT INTO customers (first_name, last_name, email, phone, city, registration_date) VALUES (%(first_name_m0)s, %(last_name_m0)s, %(email_m0)s, %(phone_m0)s, %(city_m0)s, %(registration_date_m0)s), (%(first_name_m1)s, %(last_name_m1)s, %(email_m1)s, %(phone_m1)s, %(city_m1)s, %(registration_date_m1)s), (%(first_name_m2)s, %(last_name_m2)s, %(email_m2)s, %(phone_m2)s, %(city_m2)s, %(registration_date_m2)s), (%(first_name_m3)s, %(last_name_m3)s, %(email_m3)s, %(phone_m3)s, %(city_m3)s, %(registration_date_m3)s), (%(first_name_m4)s, %(last_name_m4)s, %(email_m4)s, %(phone_m4)s, %(city_m4)s, %(registration_date_m4)s), (%(first_name_m5)s, %(last_name_m5)s, %(email_m5)s, %(phone_m5)s, %(city_m5)s, %(registration_date_m5)s), (%(first_name_m6)s, %(last_name_m6)s, %(email_m6)s, %(phone_m6)s, %(city_m6)s, %(registration_date_m6)s), (%(first_name_m7)s, %(last_name_m7)s, %(email_m7)s, %(phone_m7)s, %(city_m7)s, %(registration_date_m7)s), (%(first_name_m8)s, %(last_name_m8)s, %(email_m8)s, %(phone_m8)s, %(city_m8)s, %(registration_date_m8)s), (%(first_name_m9)s, %(last_name_m9)s, %(email_m9)s, %(phone_m9)s, %(city_m9)s, %(registration_date_m9)s), (%(first_name_m10)s, %(last_name_m10)s, %(email_m10)s, %(phone_m10)s, %(city_m10)s, %(registration_date_m10)s), (%(first_name_m11)s, %(last_name_m11)s, %(email_m11)s, %(phone_m11)s, %(city_m11)s, %(registration_date_m11)s), (%(first_name_m12)s, %(last_name_m12)s, %(email_m12)s, %(phone_m12)s, %(city_m12)s, %(registration_date_m12)s), (%(first_name_m13)s, %(last_name_m13)s, %(email_m13)s, %(phone_m13)s, %(city_m13)s, %(registration_date_m13)s), (%(first_name_m14)s, %(last_name_m14)s, %(email_m14)s, %(phone_m14)s, %(city_m14)s, %(registration_date_m14)s), (%(first_name_m15)s, %(last_name_m15)s, %(email_m15)s, %(phone_m15)s, %(city_m15)s, %(registration_date_m15)s), (%(first_name_m16)s, %(last_name_m16)s, %(email_m16)s, %(phone_m16)s, %(city_m16)s, %(registration_date_m16)s), (%(first_name_m17)s, %(last_name_m17)s, %(email_m17)s, %(phone_m17)s, %(city_m17)s, %(registration_date_m17)s), (%(first_name_m18)s, %(last_name_m18)s, %(email_m18)s, %(phone_m18)s, %(city_m18)s, %(registration_date_m18)s), (%(first_name_m19)s, %(last_name_m19)s, %(email_m19)s, %(phone_m19)s, %(city_m19)s, %(registration_date_m19)s)]
+[parameters: {'first_name_m0': 'Rahul', 'last_name_m0': 'Sharma', 'email_m0': 'rahul.sharma@gmail.com', 'phone_m0': '9876543210.0', 'city_m0': 'Bangalore', 'registration_date_m0': '2023-01-15', 'first_name_m1': 'Priya', 'last_name_m1': 'Patel', 'email_m1': 'priya.patel@yahoo.com', 'phone_m1': '-9988776564.0', 'city_m1': 'Mumbai', 'registration_date_m1': '2023-02-20', 'first_name_m2': 'Sneha', 'last_name_m2': 'Reddy', 'email_m2': 'sneha.reddy@gmail.com', 'phone_m2': '9123456789.0', 'city_m2': 'Hyderabad', 'registration_date_m2': '2023-04-15', 'first_name_m3': 'Vikram', 'last_name_m3': 'Singh', 'email_m3': 'vikram.singh@outlook.com', 'phone_m3': '9988112233.0', 'city_m3': 'Chennai', 'registration_date_m3': '2023-05-22', 'first_name_m4': 'Anjali', 'last_name_m4': 'Mehta', 'email_m4': 'anjali.mehta@gmail.com', 'phone_m4': '9876543210.0', 'city_m4': 'Bangalore', 'registration_date_m4': '2023-06-18', 'first_name_m5': 'Pooja', 'last_name_m5': 'Iyer', 'email_m5': 'pooja.iyer@gmail.com', 'phone_m5': '9123456780.0', 'city_m5': 'Bangalore', 'registration_date_m5': '2023-08-15', 'first_name_m6': 'Karthik', 'last_name_m6': 'Nair', 'email_m6': 'karthik.nair@yahoo.com', 'phone_m6': '9988776644.0', 'city_m6': 'Kochi', 'registration_date_m6': '2023-09-30', 'first_name_m7': 'Deepa', 'last_name_m7': 'Gupta', 'email_m7': 'deepa.gupta@gmail.com', 'phone_m7': '9871234567.0', 'city_m7': 'Delhi', 'registration_date_m7': '2023-10-12', 'first_name_m8': 'Arjun', 'last_name_m8': 'Rao' ... 20 parameters truncated ... 'city_m11': 'Jaipur', 'registration_date_m11': '2024-01-20', 'first_name_m12': 'Divya', 'last_name_m12': 'Menon', 'email_m12': 'divya.menon@gmail.com', 'phone_m12': '9123456701.0', 'city_m12': 'Bangalore', 'registration_date_m12': '2024-02-05', 'first_name_m13': 'Rajesh', 'last_name_m13': 'Kumar', 'email_m13': 'rajesh.kumar@gmail.com', 'phone_m13': '9876123450.0', 'city_m13': 'Delhi', 'registration_date_m13': '2024-02-12', 'first_name_m14': 'Arun', 'last_name_m14': 'Pillai', 'email_m14': 'arun.pillai@outlook.com', 'phone_m14': '9876543298.0', 'city_m14': 'Kochi', 'registration_date_m14': '2024-02-25', 'first_name_m15': 'Swati', 'last_name_m15': 'Desai', 'email_m15': 'swati.desai@gmail.com', 'phone_m15': '9123456712.0', 'city_m15': 'Pune', 'registration_date_m15': '2024-03-01', 'first_name_m16': 'Nikhil', 'last_name_m16': 'Bose', 'email_m16': 'nikhil.bose@gmail.com', 'phone_m16': '919989000000.0', 'city_m16': 'Kolkata', 'registration_date_m16': '2024-03-10', 'first_name_m17': 'Priyanka', 'last_name_m17': 'Jain', 'email_m17': 'priyanka.jain@yahoo.com', 'phone_m17': '9876543287.0', 'city_m17': 'Indore', 'registration_date_m17': '2024-03-15', 'first_name_m18': 'Meera', 'last_name_m18': 'Nambiar', 'email_m18': 'meera.nambiar@gmail.com', 'phone_m18': '9123456723.0', 'city_m18': 'Trivandrum', 'registration_date_m18': '2024-03-25', 'first_name_m19': 'Sanjay', 'last_name_m19': 'Agarwal', 'email_m19': 'sanjay.agarwal@gmail.com', 'phone_m19': '9876543276.0', 'city_m19': 'Lucknow', 'registration_date_m19': '2024-03-28'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 448, in insert_dataframe
+    df.to_sql(table, conn, if_exists="append", index=False, method="multi")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 2030, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1579, in insert_records
+    raise err
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1570, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1029, in _execute_insert_multi
+    result = conn.execute(stmt)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+[SQL: INSERT INTO customers (first_name, last_name, email, phone, city, registration_date) VALUES (%(first_name_m0)s, %(last_name_m0)s, %(email_m0)s, %(phone_m0)s, %(city_m0)s, %(registration_date_m0)s), (%(first_name_m1)s, %(last_name_m1)s, %(email_m1)s, %(phone_m1)s, %(city_m1)s, %(registration_date_m1)s), (%(first_name_m2)s, %(last_name_m2)s, %(email_m2)s, %(phone_m2)s, %(city_m2)s, %(registration_date_m2)s), (%(first_name_m3)s, %(last_name_m3)s, %(email_m3)s, %(phone_m3)s, %(city_m3)s, %(registration_date_m3)s), (%(first_name_m4)s, %(last_name_m4)s, %(email_m4)s, %(phone_m4)s, %(city_m4)s, %(registration_date_m4)s), (%(first_name_m5)s, %(last_name_m5)s, %(email_m5)s, %(phone_m5)s, %(city_m5)s, %(registration_date_m5)s), (%(first_name_m6)s, %(last_name_m6)s, %(email_m6)s, %(phone_m6)s, %(city_m6)s, %(registration_date_m6)s), (%(first_name_m7)s, %(last_name_m7)s, %(email_m7)s, %(phone_m7)s, %(city_m7)s, %(registration_date_m7)s), (%(first_name_m8)s, %(last_name_m8)s, %(email_m8)s, %(phone_m8)s, %(city_m8)s, %(registration_date_m8)s), (%(first_name_m9)s, %(last_name_m9)s, %(email_m9)s, %(phone_m9)s, %(city_m9)s, %(registration_date_m9)s), (%(first_name_m10)s, %(last_name_m10)s, %(email_m10)s, %(phone_m10)s, %(city_m10)s, %(registration_date_m10)s), (%(first_name_m11)s, %(last_name_m11)s, %(email_m11)s, %(phone_m11)s, %(city_m11)s, %(registration_date_m11)s), (%(first_name_m12)s, %(last_name_m12)s, %(email_m12)s, %(phone_m12)s, %(city_m12)s, %(registration_date_m12)s), (%(first_name_m13)s, %(last_name_m13)s, %(email_m13)s, %(phone_m13)s, %(city_m13)s, %(registration_date_m13)s), (%(first_name_m14)s, %(last_name_m14)s, %(email_m14)s, %(phone_m14)s, %(city_m14)s, %(registration_date_m14)s), (%(first_name_m15)s, %(last_name_m15)s, %(email_m15)s, %(phone_m15)s, %(city_m15)s, %(registration_date_m15)s), (%(first_name_m16)s, %(last_name_m16)s, %(email_m16)s, %(phone_m16)s, %(city_m16)s, %(registration_date_m16)s), (%(first_name_m17)s, %(last_name_m17)s, %(email_m17)s, %(phone_m17)s, %(city_m17)s, %(registration_date_m17)s), (%(first_name_m18)s, %(last_name_m18)s, %(email_m18)s, %(phone_m18)s, %(city_m18)s, %(registration_date_m18)s), (%(first_name_m19)s, %(last_name_m19)s, %(email_m19)s, %(phone_m19)s, %(city_m19)s, %(registration_date_m19)s)]
+[parameters: {'first_name_m0': 'Rahul', 'last_name_m0': 'Sharma', 'email_m0': 'rahul.sharma@gmail.com', 'phone_m0': '9876543210.0', 'city_m0': 'Bangalore', 'registration_date_m0': '2023-01-15', 'first_name_m1': 'Priya', 'last_name_m1': 'Patel', 'email_m1': 'priya.patel@yahoo.com', 'phone_m1': '-9988776564.0', 'city_m1': 'Mumbai', 'registration_date_m1': '2023-02-20', 'first_name_m2': 'Sneha', 'last_name_m2': 'Reddy', 'email_m2': 'sneha.reddy@gmail.com', 'phone_m2': '9123456789.0', 'city_m2': 'Hyderabad', 'registration_date_m2': '2023-04-15', 'first_name_m3': 'Vikram', 'last_name_m3': 'Singh', 'email_m3': 'vikram.singh@outlook.com', 'phone_m3': '9988112233.0', 'city_m3': 'Chennai', 'registration_date_m3': '2023-05-22', 'first_name_m4': 'Anjali', 'last_name_m4': 'Mehta', 'email_m4': 'anjali.mehta@gmail.com', 'phone_m4': '9876543210.0', 'city_m4': 'Bangalore', 'registration_date_m4': '2023-06-18', 'first_name_m5': 'Pooja', 'last_name_m5': 'Iyer', 'email_m5': 'pooja.iyer@gmail.com', 'phone_m5': '9123456780.0', 'city_m5': 'Bangalore', 'registration_date_m5': '2023-08-15', 'first_name_m6': 'Karthik', 'last_name_m6': 'Nair', 'email_m6': 'karthik.nair@yahoo.com', 'phone_m6': '9988776644.0', 'city_m6': 'Kochi', 'registration_date_m6': '2023-09-30', 'first_name_m7': 'Deepa', 'last_name_m7': 'Gupta', 'email_m7': 'deepa.gupta@gmail.com', 'phone_m7': '9871234567.0', 'city_m7': 'Delhi', 'registration_date_m7': '2023-10-12', 'first_name_m8': 'Arjun', 'last_name_m8': 'Rao' ... 20 parameters truncated ... 'city_m11': 'Jaipur', 'registration_date_m11': '2024-01-20', 'first_name_m12': 'Divya', 'last_name_m12': 'Menon', 'email_m12': 'divya.menon@gmail.com', 'phone_m12': '9123456701.0', 'city_m12': 'Bangalore', 'registration_date_m12': '2024-02-05', 'first_name_m13': 'Rajesh', 'last_name_m13': 'Kumar', 'email_m13': 'rajesh.kumar@gmail.com', 'phone_m13': '9876123450.0', 'city_m13': 'Delhi', 'registration_date_m13': '2024-02-12', 'first_name_m14': 'Arun', 'last_name_m14': 'Pillai', 'email_m14': 'arun.pillai@outlook.com', 'phone_m14': '9876543298.0', 'city_m14': 'Kochi', 'registration_date_m14': '2024-02-25', 'first_name_m15': 'Swati', 'last_name_m15': 'Desai', 'email_m15': 'swati.desai@gmail.com', 'phone_m15': '9123456712.0', 'city_m15': 'Pune', 'registration_date_m15': '2024-03-01', 'first_name_m16': 'Nikhil', 'last_name_m16': 'Bose', 'email_m16': 'nikhil.bose@gmail.com', 'phone_m16': '919989000000.0', 'city_m16': 'Kolkata', 'registration_date_m16': '2024-03-10', 'first_name_m17': 'Priyanka', 'last_name_m17': 'Jain', 'email_m17': 'priyanka.jain@yahoo.com', 'phone_m17': '9876543287.0', 'city_m17': 'Indore', 'registration_date_m17': '2024-03-15', 'first_name_m18': 'Meera', 'last_name_m18': 'Nambiar', 'email_m18': 'meera.nambiar@gmail.com', 'phone_m18': '9123456723.0', 'city_m18': 'Trivandrum', 'registration_date_m18': '2024-03-25', 'first_name_m19': 'Sanjay', 'last_name_m19': 'Agarwal', 'email_m19': 'sanjay.agarwal@gmail.com', 'phone_m19': '9876543276.0', 'city_m19': 'Lucknow', 'registration_date_m19': '2024-03-28'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-01-03 23:30:48,953 | ERROR | ❌ ETL Failed: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+[SQL: INSERT INTO customers (first_name, last_name, email, phone, city, registration_date) VALUES (%(first_name_m0)s, %(last_name_m0)s, %(email_m0)s, %(phone_m0)s, %(city_m0)s, %(registration_date_m0)s), (%(first_name_m1)s, %(last_name_m1)s, %(email_m1)s, %(phone_m1)s, %(city_m1)s, %(registration_date_m1)s), (%(first_name_m2)s, %(last_name_m2)s, %(email_m2)s, %(phone_m2)s, %(city_m2)s, %(registration_date_m2)s), (%(first_name_m3)s, %(last_name_m3)s, %(email_m3)s, %(phone_m3)s, %(city_m3)s, %(registration_date_m3)s), (%(first_name_m4)s, %(last_name_m4)s, %(email_m4)s, %(phone_m4)s, %(city_m4)s, %(registration_date_m4)s), (%(first_name_m5)s, %(last_name_m5)s, %(email_m5)s, %(phone_m5)s, %(city_m5)s, %(registration_date_m5)s), (%(first_name_m6)s, %(last_name_m6)s, %(email_m6)s, %(phone_m6)s, %(city_m6)s, %(registration_date_m6)s), (%(first_name_m7)s, %(last_name_m7)s, %(email_m7)s, %(phone_m7)s, %(city_m7)s, %(registration_date_m7)s), (%(first_name_m8)s, %(last_name_m8)s, %(email_m8)s, %(phone_m8)s, %(city_m8)s, %(registration_date_m8)s), (%(first_name_m9)s, %(last_name_m9)s, %(email_m9)s, %(phone_m9)s, %(city_m9)s, %(registration_date_m9)s), (%(first_name_m10)s, %(last_name_m10)s, %(email_m10)s, %(phone_m10)s, %(city_m10)s, %(registration_date_m10)s), (%(first_name_m11)s, %(last_name_m11)s, %(email_m11)s, %(phone_m11)s, %(city_m11)s, %(registration_date_m11)s), (%(first_name_m12)s, %(last_name_m12)s, %(email_m12)s, %(phone_m12)s, %(city_m12)s, %(registration_date_m12)s), (%(first_name_m13)s, %(last_name_m13)s, %(email_m13)s, %(phone_m13)s, %(city_m13)s, %(registration_date_m13)s), (%(first_name_m14)s, %(last_name_m14)s, %(email_m14)s, %(phone_m14)s, %(city_m14)s, %(registration_date_m14)s), (%(first_name_m15)s, %(last_name_m15)s, %(email_m15)s, %(phone_m15)s, %(city_m15)s, %(registration_date_m15)s), (%(first_name_m16)s, %(last_name_m16)s, %(email_m16)s, %(phone_m16)s, %(city_m16)s, %(registration_date_m16)s), (%(first_name_m17)s, %(last_name_m17)s, %(email_m17)s, %(phone_m17)s, %(city_m17)s, %(registration_date_m17)s), (%(first_name_m18)s, %(last_name_m18)s, %(email_m18)s, %(phone_m18)s, %(city_m18)s, %(registration_date_m18)s), (%(first_name_m19)s, %(last_name_m19)s, %(email_m19)s, %(phone_m19)s, %(city_m19)s, %(registration_date_m19)s)]
+[parameters: {'first_name_m0': 'Rahul', 'last_name_m0': 'Sharma', 'email_m0': 'rahul.sharma@gmail.com', 'phone_m0': '9876543210.0', 'city_m0': 'Bangalore', 'registration_date_m0': '2023-01-15', 'first_name_m1': 'Priya', 'last_name_m1': 'Patel', 'email_m1': 'priya.patel@yahoo.com', 'phone_m1': '-9988776564.0', 'city_m1': 'Mumbai', 'registration_date_m1': '2023-02-20', 'first_name_m2': 'Sneha', 'last_name_m2': 'Reddy', 'email_m2': 'sneha.reddy@gmail.com', 'phone_m2': '9123456789.0', 'city_m2': 'Hyderabad', 'registration_date_m2': '2023-04-15', 'first_name_m3': 'Vikram', 'last_name_m3': 'Singh', 'email_m3': 'vikram.singh@outlook.com', 'phone_m3': '9988112233.0', 'city_m3': 'Chennai', 'registration_date_m3': '2023-05-22', 'first_name_m4': 'Anjali', 'last_name_m4': 'Mehta', 'email_m4': 'anjali.mehta@gmail.com', 'phone_m4': '9876543210.0', 'city_m4': 'Bangalore', 'registration_date_m4': '2023-06-18', 'first_name_m5': 'Pooja', 'last_name_m5': 'Iyer', 'email_m5': 'pooja.iyer@gmail.com', 'phone_m5': '9123456780.0', 'city_m5': 'Bangalore', 'registration_date_m5': '2023-08-15', 'first_name_m6': 'Karthik', 'last_name_m6': 'Nair', 'email_m6': 'karthik.nair@yahoo.com', 'phone_m6': '9988776644.0', 'city_m6': 'Kochi', 'registration_date_m6': '2023-09-30', 'first_name_m7': 'Deepa', 'last_name_m7': 'Gupta', 'email_m7': 'deepa.gupta@gmail.com', 'phone_m7': '9871234567.0', 'city_m7': 'Delhi', 'registration_date_m7': '2023-10-12', 'first_name_m8': 'Arjun', 'last_name_m8': 'Rao' ... 20 parameters truncated ... 'city_m11': 'Jaipur', 'registration_date_m11': '2024-01-20', 'first_name_m12': 'Divya', 'last_name_m12': 'Menon', 'email_m12': 'divya.menon@gmail.com', 'phone_m12': '9123456701.0', 'city_m12': 'Bangalore', 'registration_date_m12': '2024-02-05', 'first_name_m13': 'Rajesh', 'last_name_m13': 'Kumar', 'email_m13': 'rajesh.kumar@gmail.com', 'phone_m13': '9876123450.0', 'city_m13': 'Delhi', 'registration_date_m13': '2024-02-12', 'first_name_m14': 'Arun', 'last_name_m14': 'Pillai', 'email_m14': 'arun.pillai@outlook.com', 'phone_m14': '9876543298.0', 'city_m14': 'Kochi', 'registration_date_m14': '2024-02-25', 'first_name_m15': 'Swati', 'last_name_m15': 'Desai', 'email_m15': 'swati.desai@gmail.com', 'phone_m15': '9123456712.0', 'city_m15': 'Pune', 'registration_date_m15': '2024-03-01', 'first_name_m16': 'Nikhil', 'last_name_m16': 'Bose', 'email_m16': 'nikhil.bose@gmail.com', 'phone_m16': '919989000000.0', 'city_m16': 'Kolkata', 'registration_date_m16': '2024-03-10', 'first_name_m17': 'Priyanka', 'last_name_m17': 'Jain', 'email_m17': 'priyanka.jain@yahoo.com', 'phone_m17': '9876543287.0', 'city_m17': 'Indore', 'registration_date_m17': '2024-03-15', 'first_name_m18': 'Meera', 'last_name_m18': 'Nambiar', 'email_m18': 'meera.nambiar@gmail.com', 'phone_m18': '9123456723.0', 'city_m18': 'Trivandrum', 'registration_date_m18': '2024-03-25', 'first_name_m19': 'Sanjay', 'last_name_m19': 'Agarwal', 'email_m19': 'sanjay.agarwal@gmail.com', 'phone_m19': '9876543276.0', 'city_m19': 'Lucknow', 'registration_date_m19': '2024-03-28'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 643, in main
+    metrics[0].records_loaded = insert_dataframe(engine, "customers", customers_clean, logger)
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 448, in insert_dataframe
+    df.to_sql(table, conn, if_exists="append", index=False, method="multi")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 2030, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1579, in insert_records
+    raise err
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1570, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\pandas\io\sql.py", line 1029, in _execute_insert_multi
+    result = conn.execute(stmt)
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "customers_email_key"
+DETAIL:  Key (email)=(rahul.sharma@gmail.com) already exists.
+
+[SQL: INSERT INTO customers (first_name, last_name, email, phone, city, registration_date) VALUES (%(first_name_m0)s, %(last_name_m0)s, %(email_m0)s, %(phone_m0)s, %(city_m0)s, %(registration_date_m0)s), (%(first_name_m1)s, %(last_name_m1)s, %(email_m1)s, %(phone_m1)s, %(city_m1)s, %(registration_date_m1)s), (%(first_name_m2)s, %(last_name_m2)s, %(email_m2)s, %(phone_m2)s, %(city_m2)s, %(registration_date_m2)s), (%(first_name_m3)s, %(last_name_m3)s, %(email_m3)s, %(phone_m3)s, %(city_m3)s, %(registration_date_m3)s), (%(first_name_m4)s, %(last_name_m4)s, %(email_m4)s, %(phone_m4)s, %(city_m4)s, %(registration_date_m4)s), (%(first_name_m5)s, %(last_name_m5)s, %(email_m5)s, %(phone_m5)s, %(city_m5)s, %(registration_date_m5)s), (%(first_name_m6)s, %(last_name_m6)s, %(email_m6)s, %(phone_m6)s, %(city_m6)s, %(registration_date_m6)s), (%(first_name_m7)s, %(last_name_m7)s, %(email_m7)s, %(phone_m7)s, %(city_m7)s, %(registration_date_m7)s), (%(first_name_m8)s, %(last_name_m8)s, %(email_m8)s, %(phone_m8)s, %(city_m8)s, %(registration_date_m8)s), (%(first_name_m9)s, %(last_name_m9)s, %(email_m9)s, %(phone_m9)s, %(city_m9)s, %(registration_date_m9)s), (%(first_name_m10)s, %(last_name_m10)s, %(email_m10)s, %(phone_m10)s, %(city_m10)s, %(registration_date_m10)s), (%(first_name_m11)s, %(last_name_m11)s, %(email_m11)s, %(phone_m11)s, %(city_m11)s, %(registration_date_m11)s), (%(first_name_m12)s, %(last_name_m12)s, %(email_m12)s, %(phone_m12)s, %(city_m12)s, %(registration_date_m12)s), (%(first_name_m13)s, %(last_name_m13)s, %(email_m13)s, %(phone_m13)s, %(city_m13)s, %(registration_date_m13)s), (%(first_name_m14)s, %(last_name_m14)s, %(email_m14)s, %(phone_m14)s, %(city_m14)s, %(registration_date_m14)s), (%(first_name_m15)s, %(last_name_m15)s, %(email_m15)s, %(phone_m15)s, %(city_m15)s, %(registration_date_m15)s), (%(first_name_m16)s, %(last_name_m16)s, %(email_m16)s, %(phone_m16)s, %(city_m16)s, %(registration_date_m16)s), (%(first_name_m17)s, %(last_name_m17)s, %(email_m17)s, %(phone_m17)s, %(city_m17)s, %(registration_date_m17)s), (%(first_name_m18)s, %(last_name_m18)s, %(email_m18)s, %(phone_m18)s, %(city_m18)s, %(registration_date_m18)s), (%(first_name_m19)s, %(last_name_m19)s, %(email_m19)s, %(phone_m19)s, %(city_m19)s, %(registration_date_m19)s)]
+[parameters: {'first_name_m0': 'Rahul', 'last_name_m0': 'Sharma', 'email_m0': 'rahul.sharma@gmail.com', 'phone_m0': '9876543210.0', 'city_m0': 'Bangalore', 'registration_date_m0': '2023-01-15', 'first_name_m1': 'Priya', 'last_name_m1': 'Patel', 'email_m1': 'priya.patel@yahoo.com', 'phone_m1': '-9988776564.0', 'city_m1': 'Mumbai', 'registration_date_m1': '2023-02-20', 'first_name_m2': 'Sneha', 'last_name_m2': 'Reddy', 'email_m2': 'sneha.reddy@gmail.com', 'phone_m2': '9123456789.0', 'city_m2': 'Hyderabad', 'registration_date_m2': '2023-04-15', 'first_name_m3': 'Vikram', 'last_name_m3': 'Singh', 'email_m3': 'vikram.singh@outlook.com', 'phone_m3': '9988112233.0', 'city_m3': 'Chennai', 'registration_date_m3': '2023-05-22', 'first_name_m4': 'Anjali', 'last_name_m4': 'Mehta', 'email_m4': 'anjali.mehta@gmail.com', 'phone_m4': '9876543210.0', 'city_m4': 'Bangalore', 'registration_date_m4': '2023-06-18', 'first_name_m5': 'Pooja', 'last_name_m5': 'Iyer', 'email_m5': 'pooja.iyer@gmail.com', 'phone_m5': '9123456780.0', 'city_m5': 'Bangalore', 'registration_date_m5': '2023-08-15', 'first_name_m6': 'Karthik', 'last_name_m6': 'Nair', 'email_m6': 'karthik.nair@yahoo.com', 'phone_m6': '9988776644.0', 'city_m6': 'Kochi', 'registration_date_m6': '2023-09-30', 'first_name_m7': 'Deepa', 'last_name_m7': 'Gupta', 'email_m7': 'deepa.gupta@gmail.com', 'phone_m7': '9871234567.0', 'city_m7': 'Delhi', 'registration_date_m7': '2023-10-12', 'first_name_m8': 'Arjun', 'last_name_m8': 'Rao' ... 20 parameters truncated ... 'city_m11': 'Jaipur', 'registration_date_m11': '2024-01-20', 'first_name_m12': 'Divya', 'last_name_m12': 'Menon', 'email_m12': 'divya.menon@gmail.com', 'phone_m12': '9123456701.0', 'city_m12': 'Bangalore', 'registration_date_m12': '2024-02-05', 'first_name_m13': 'Rajesh', 'last_name_m13': 'Kumar', 'email_m13': 'rajesh.kumar@gmail.com', 'phone_m13': '9876123450.0', 'city_m13': 'Delhi', 'registration_date_m13': '2024-02-12', 'first_name_m14': 'Arun', 'last_name_m14': 'Pillai', 'email_m14': 'arun.pillai@outlook.com', 'phone_m14': '9876543298.0', 'city_m14': 'Kochi', 'registration_date_m14': '2024-02-25', 'first_name_m15': 'Swati', 'last_name_m15': 'Desai', 'email_m15': 'swati.desai@gmail.com', 'phone_m15': '9123456712.0', 'city_m15': 'Pune', 'registration_date_m15': '2024-03-01', 'first_name_m16': 'Nikhil', 'last_name_m16': 'Bose', 'email_m16': 'nikhil.bose@gmail.com', 'phone_m16': '919989000000.0', 'city_m16': 'Kolkata', 'registration_date_m16': '2024-03-10', 'first_name_m17': 'Priyanka', 'last_name_m17': 'Jain', 'email_m17': 'priyanka.jain@yahoo.com', 'phone_m17': '9876543287.0', 'city_m17': 'Indore', 'registration_date_m17': '2024-03-15', 'first_name_m18': 'Meera', 'last_name_m18': 'Nambiar', 'email_m18': 'meera.nambiar@gmail.com', 'phone_m18': '9123456723.0', 'city_m18': 'Trivandrum', 'registration_date_m18': '2024-03-25', 'first_name_m19': 'Sanjay', 'last_name_m19': 'Agarwal', 'email_m19': 'sanjay.agarwal@gmail.com', 'phone_m19': '9876543276.0', 'city_m19': 'Lucknow', 'registration_date_m19': '2024-03-28'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-01-03 23:30:48,961 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-03 23:35:46,297 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-03 23:35:46,304 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-03 23:35:46,306 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-03 23:35:46,315 | INFO | Customers: dropped 5 rows due to missing email.
+2026-01-03 23:35:46,317 | INFO | Customers: standardized phone formats.
+2026-01-03 23:35:46,338 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-03 23:35:46,345 | INFO | Products: standardized category names.
+2026-01-03 23:35:46,451 | INFO | Loaded 20 rows into customers.
+2026-01-03 23:35:46,459 | INFO | Loaded 20 rows into products.
+2026-01-03 23:35:46,462 | ERROR | ❌ ETL Failed: sales_raw.csv does not have the expected columns. Need at least: customer_email/email, order_date/date, quantity, unit_price/price, product_name. Found columns: ['transaction_id', 'customer_id', 'product_id', 'quantity', 'unit_price', 'transaction_date', 'status']
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 651, in main
+    orders_df, items_df, s_dup, s_missing = transform_sales_to_orders(
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sales_raw, customers_map, products_map, logger
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 314, in transform_sales_to_orders
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: sales_raw.csv does not have the expected columns. Need at least: customer_email/email, order_date/date, quantity, unit_price/price, product_name. Found columns: ['transaction_id', 'customer_id', 'product_id', 'quantity', 'unit_price', 'transaction_date', 'status']
+2026-01-03 23:35:46,464 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-03 23:42:30,627 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-03 23:42:30,633 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-03 23:42:30,637 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-03 23:42:30,649 | INFO | Customers: dropped 5 rows due to missing email.
+2026-01-03 23:42:30,652 | INFO | Customers: standardized phone formats.
+2026-01-03 23:42:30,668 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-03 23:42:30,674 | INFO | Products: standardized category names.
+2026-01-03 23:42:30,785 | INFO | Loaded 20 rows into customers.
+2026-01-03 23:42:30,794 | INFO | Loaded 20 rows into products.
+2026-01-03 23:42:30,824 | INFO | Sales: dropped 41 rows due to missing customer_id/product_id/qty/unit_price.
+2026-01-03 23:42:30,831 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-03 23:42:30,832 | INFO | ✅ ETL Completed Successfully.
+2026-01-03 23:59:20,223 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-03 23:59:20,230 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-03 23:59:20,233 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-03 23:59:20,246 | INFO | Customers: dropped 26 rows due to missing/invalid customer_id.
+2026-01-03 23:59:20,250 | INFO | Customers: standardized phone formats.
+2026-01-03 23:59:20,253 | INFO | Products: dropped 20 rows due to missing/invalid product_id.
+2026-01-03 23:59:20,256 | INFO | Products: standardized category names.
+2026-01-03 23:59:20,261 | INFO | No customers to load.
+2026-01-03 23:59:20,262 | INFO | No products to load.
+2026-01-03 23:59:20,367 | INFO | Sales: dropped 41 rows due to missing IDs/qty/price.
+2026-01-03 23:59:20,377 | INFO | Sales -> Orders to load: 0
+2026-01-03 23:59:20,378 | INFO | Sales -> Order items to load: 0
+2026-01-03 23:59:20,378 | INFO | No orders/items to load.
+2026-01-03 23:59:20,380 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-03 23:59:20,381 | INFO | ✅ ETL Completed Successfully.
+2026-01-04 00:00:05,362 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-04 00:00:05,367 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-04 00:00:05,370 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-04 00:00:05,383 | INFO | Customers: dropped 26 rows due to missing/invalid customer_id.
+2026-01-04 00:00:05,385 | INFO | Customers: standardized phone formats.
+2026-01-04 00:00:05,388 | INFO | Products: dropped 20 rows due to missing/invalid product_id.
+2026-01-04 00:00:05,391 | INFO | Products: standardized category names.
+2026-01-04 00:00:05,396 | INFO | No customers to load.
+2026-01-04 00:00:05,397 | INFO | No products to load.
+2026-01-04 00:00:05,501 | INFO | Sales: dropped 41 rows due to missing IDs/qty/price.
+2026-01-04 00:00:05,512 | INFO | Sales -> Orders to load: 0
+2026-01-04 00:00:05,513 | INFO | Sales -> Order items to load: 0
+2026-01-04 00:00:05,513 | INFO | No orders/items to load.
+2026-01-04 00:00:05,515 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-04 00:00:05,515 | INFO | ✅ ETL Completed Successfully.
+2026-01-04 00:03:23,988 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-04 00:03:23,994 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-04 00:03:23,996 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-04 00:03:24,008 | INFO | Customers: dropped 5 rows due to missing email (NOT NULL/UNIQUE).
+2026-01-04 00:03:24,009 | INFO | Customers: standardized phone formats.
+2026-01-04 00:03:24,029 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-04 00:03:24,037 | INFO | Products: standardized category names.
+2026-01-04 00:03:24,142 | INFO | Loaded/merged 20 customers.
+2026-01-04 00:03:24,157 | INFO | Loaded 20 products.
+2026-01-04 00:03:24,181 | INFO | Sales: dropped 5 rows due to missing customer_id/product_id/qty/unit_price.
+2026-01-04 00:03:24,184 | INFO | Sales: removed 1 duplicate rows by transaction_id.
+2026-01-04 00:03:24,186 | INFO | Sales: dropped 8 rows because customer_id/product_id not found in loaded mappings.
+2026-01-04 00:03:24,191 | INFO | Sales -> Orders to load: 27
+2026-01-04 00:03:24,191 | INFO | Sales -> Order items to load: 27
+2026-01-04 00:03:24,204 | ERROR | ❌ ETL Failed: (psycopg2.errors.ForeignKeyViolation) insert or update on table "order_items" violates foreign key constraint "order_items_order_id_fkey"
+DETAIL:  Key (order_id)=(0) is not present in table "orders".
+
+[SQL: 
+                    INSERT INTO order_items (order_id, product_id, quantity, unit_price, subtotal)
+                    VALUES (%(order_id)s, %(product_id)s, %(quantity)s, %(unit_price)s, %(subtotal)s)
+                ]
+[parameters: {'order_id': 0, 'product_id': 1, 'quantity': 1, 'unit_price': 45999.0, 'subtotal': 45999.0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ForeignKeyViolation: insert or update on table "order_items" violates foreign key constraint "order_items_order_id_fkey"
+DETAIL:  Key (order_id)=(0) is not present in table "orders".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 695, in main
+    orders_loaded, items_loaded = insert_orders_and_items_rowwise(engine, orders_df, items_df, logger)
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\etl_pipeline.py", line 602, in insert_orders_and_items_rowwise
+    conn.execute(
+    ~~~~~~~~~~~~^
+        text("""
+        ^^^^^^^^
+    ...<3 lines>...
+        items_payload
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\asifi\OneDrive\Documents\Masai\FlexiMart-Project1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "order_items" violates foreign key constraint "order_items_order_id_fkey"
+DETAIL:  Key (order_id)=(0) is not present in table "orders".
+
+[SQL: 
+                    INSERT INTO order_items (order_id, product_id, quantity, unit_price, subtotal)
+                    VALUES (%(order_id)s, %(product_id)s, %(quantity)s, %(unit_price)s, %(subtotal)s)
+                ]
+[parameters: {'order_id': 0, 'product_id': 1, 'quantity': 1, 'unit_price': 45999.0, 'subtotal': 45999.0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-01-04 00:03:24,213 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-04 00:15:33,509 | INFO | Reading CSV: ./data/raw\customers_raw.csv
+2026-01-04 00:15:33,515 | INFO | Reading CSV: ./data/raw\products_raw.csv
+2026-01-04 00:15:33,517 | INFO | Reading CSV: ./data/raw\sales_raw.csv
+2026-01-04 00:15:33,522 | INFO | Customers: dropped 5 rows due to missing email.
+2026-01-04 00:15:33,537 | INFO | Customers: removed 1 duplicate rows by email.
+2026-01-04 00:15:33,646 | INFO | Loaded/merged customers: 20
+2026-01-04 00:15:33,678 | INFO | Loaded/merged products: 20
+2026-01-04 00:15:33,699 | INFO | Sales: dropped 5 rows due to missing ids/qty/price/date.
+2026-01-04 00:15:33,700 | INFO | Sales: removed 1 duplicate rows by transaction_id.
+2026-01-04 00:15:33,703 | INFO | Sales: dropped 8 rows due to missing customer/product mapping.
+2026-01-04 00:15:33,710 | INFO | Sales -> Orders to load: 27
+2026-01-04 00:15:33,711 | INFO | Sales -> Order items to load: 27
+2026-01-04 00:15:33,758 | INFO | Loaded 27 orders and 27 order_items.
+2026-01-04 00:15:33,761 | INFO | Data quality report written to: ./data_quality_report.txt
+2026-01-04 00:15:33,762 | INFO | ✅ ETL Completed Successfully.
