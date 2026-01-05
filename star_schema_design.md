@@ -98,6 +98,7 @@ Transaction Date: 2024-01-15
 }
 ```
  **dim_date:**
+ ```json
 {
   "date_key": 20240115,
   "full_date": "2024-01-15",
@@ -108,8 +109,9 @@ Transaction Date: 2024-01-15
   "year": 2024,
   "is_weekend": false
 }
-
+```
 **dim_product**
+```json
 {
   "product_key": 5,
   "product_id": "P1005",
@@ -120,8 +122,9 @@ Transaction Date: 2024-01-15
   "sku": "LAP-001",
   "is_active": true
 }
-
+```
 **dim_customer**
+```json
 {
   "customer_key": 12,
   "customer_id": "C1012",
@@ -134,3 +137,4 @@ Transaction Date: 2024-01-15
   "customer_segment": "Retail",
   "is_active": true
 }
+```
