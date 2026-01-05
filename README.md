@@ -10,6 +10,7 @@
 This project builds an end-to-end data engineering workflow for **FlexiMart** across three parts: (1) a relational database ETL pipeline to load and clean transactional data, (2) NoSQL analysis and operations using MongoDB for flexible product/catalog queries, and (3) a dimensional **data warehouse (star schema)** to support OLAP-style analytics. The final deliverable includes schema design, realistic warehouse seed data, and analytical SQL queries for business reporting.
 
 ## Repository Structure
+```bash
 ├── part1-database-etl/
 │   ├── etl_pipeline.py
 │   ├── schema_documentation.md
@@ -25,7 +26,7 @@ This project builds an end-to-end data engineering workflow for **FlexiMart** ac
 │   ├── warehouse_data.sql
 │   └── analytics_queries.sql
 └── README.md
-
+```
 ## Technologies Used
 
 - Python 3.x, pandas, mysql-connector-python
@@ -51,15 +52,15 @@ psql -d fleximart -f part1-database-etl/business_queries.sql
 psql -d fleximart_dw -f part3-datawarehouse/warehouse_schema.sql
 psql -d fleximart_dw -f part3-datawarehouse/warehouse_data.sql
 psql -d fleximart_dw -f part3-datawarehouse/analytics_queries.sql
-
+```
 ### MongoDB Setup
-
+```bash
 # Option 1: Run JS file in mongosh
 mongosh "mongodb://localhost:27017/fleximart" --file part2-nosql/mongodb_operations.js
 
 # Option 2: If mongodb_operations.js expects to import JSON itself, just run it
 mongosh --file part2-nosql/mongodb_operations.js
-
+```
 
 ## Key Learnings
 - Built an ETL pipeline to clean and load data into a relational database and validated results with business queries.
