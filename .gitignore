@@ -1,9 +1,21 @@
-.env
-.env.*
-node_modules/
-dist/
-build/
+# Python
 __pycache__/
-.venv/
-.DS_Store
+*.pyc
+.env
+venv/
+
+# IDE
 .vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.log
+
+# Large files
+*.zip
+
