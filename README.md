@@ -1,7 +1,7 @@
 # FlexiMart Data Architecture Project
 
 - **Student Name:** Mohammed Asif Iqbal
-- **Student ID:** [Your ID]
+- **Student ID:** bitsom_ba_25071782
 - **Email:** asifiqbal149@gmail.com
 - **Date:** 1/5/2026
 
